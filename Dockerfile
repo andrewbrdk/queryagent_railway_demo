@@ -1,6 +1,6 @@
 FROM golang:1.26
 
-RUN apt-get install git
+RUN apt-get update && apt-get install git pgformatter
 RUN git clone https://github.com/andrewbrdk/queryagent /app
 RUN mkdir -p /app/logs
 WORKDIR /app
