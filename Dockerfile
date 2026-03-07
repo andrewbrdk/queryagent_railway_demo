@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends pgformatter \
 WORKDIR /app
 COPY --from=frontend /app /app
 RUN mkdir -p /app/logs
-RUN go mod download
+RUN go get queryagent
 RUN go build
 #todo: clean
 EXPOSE 8080
